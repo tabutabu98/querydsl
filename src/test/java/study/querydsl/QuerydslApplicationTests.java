@@ -5,6 +5,7 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.Commit;
 import org.springframework.transaction.annotation.Transactional;
 import study.querydsl.domain.Hello;
 import study.querydsl.domain.QHello;
@@ -15,6 +16,7 @@ import static org.assertj.core.api.Assertions.*;
 
 @SpringBootTest
 @Transactional
+@Commit	// db에 값 넣고 롤백 안함(개발 단계에서만)
 class QuerydslApplicationTests {
 
 	@Autowired
