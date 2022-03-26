@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.persistence.EntityManager;
 
 import static org.assertj.core.api.Assertions.*;
+import static study.querydsl.domain.QMember.*;
 
 @SpringBootTest
 @Transactional
@@ -53,12 +54,10 @@ public class QuerydslBasicTest {
 
     @Test
     void startQuerydsl() throws Exception {
-        QMember m = new QMember("m");
-
         Member findMember = jpaQueryFactory
-                .select(m)
-                .from(m)
-                .where(m.username.eq("member1"))
+                .select(member)
+                .from(member)
+                .where(member.username.eq("member1"))
                 .fetchOne();
         assertThat(findMember.getUsername()).isEqualTo("member1");
     }
