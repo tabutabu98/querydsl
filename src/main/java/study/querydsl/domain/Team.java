@@ -14,6 +14,7 @@ import static lombok.AccessLevel.*;
 @Getter
 @Setter
 @NoArgsConstructor(access = PROTECTED)
+@ToString(of = {"id", "name"})
 public class Team {
 
     @Id
