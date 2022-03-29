@@ -54,7 +54,6 @@ public class MemberQueryRepository {
                 .fetch();
     }
 
-
     private BooleanExpression usernameEq(String username) {
         return hasText(username) ? member.username.eq(username) : null;
     }
