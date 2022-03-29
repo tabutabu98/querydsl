@@ -1,13 +1,19 @@
 spring:
   profiles:
-    active: ${prfile:local}
+    active: test
+
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:tcp://localhost/~/H2/Study/querydsl
+    username: sa
+    password:
 
   jpa:
     hibernate:
       ddl-auto: create
     properties:
       hibernate:
-#        show_sql: true
+        #        show_sql: true
         format_sql: true
         use_sql_comments: true
 
